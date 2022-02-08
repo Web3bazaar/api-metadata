@@ -1,10 +1,16 @@
 {
     "project" : "ERC721 Test Contract",
-    "description" : "An test contract for weebazaar",
+    "description" : "Test contract for weebazaar ERC721",
     "projectImage" : "",
     "contractAddress" : "",
     "contractType" : "ERC721",
-    "api_metadata" : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/{id}",
     "discord" : "",
-    "twitter" : ""
+    "twitter" : "",
+    "api_metadata" : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/{id}",
+    "api_metadata_sample" : {
+        "name" : "",
+        "description" : "",
+        "image" : ""
+    }
+
 }

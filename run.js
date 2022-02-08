@@ -7,6 +7,12 @@ app.listen(port, () =>
     console.log("Server running on port ", port);
 });
 
+const infoContent = {
+    name : 'Item Nº:',
+    description : "Item Desc: ",
+    image : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/"
+}
+
 app.get("/", (req, res, next) => 
 {
     res.json( {name : "example 2"} );
@@ -28,8 +34,15 @@ app.get("/detail/:id", (req, res, next) =>
         res.json( {name : "Id from query not vale", ' <!!!!> ' : "Id from query not vale", in : req.params.id} );
     }
     else{
-        res.json( { id : id , 'desc' : "Need to implement!" } );
+        infoContent
+        res.json(
+            { 
+                id : id,
+                name : infoContent.name +  id ,
+                description: infoContent.description +  id,
+                image: infoContent.image +  id + '.jpg',
+             });
     }
    
-   
 });
+
