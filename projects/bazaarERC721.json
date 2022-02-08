@@ -3,8 +3,8 @@
     "description" : "An test contract for weebazaar",
     "projectImage" : "",
     "contractAddress" : "",
-    "contractType" : "",
-    "api_metadata" : "",
+    "contractType" : "ERC721",
+    "api_metadata" : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/{id}",
     "discord" : "",
     "twitter" : ""
 }

@@ -3,8 +3,8 @@
     "description" : "An test contract for ERC1155 weebazaar",
     "projectImage" : "",
     "contractAddress" : "",
-    "contractType" : "",
-    "api_metadata" : "",
+    "contractType" : "ERC1155",
+    "api_metadata" : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/{id}",
     "discord" : "",
     "twitter" : ""
 }
