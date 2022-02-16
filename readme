@@ -10,11 +10,11 @@ https://api.etherscan.io/apis
 
 
 BALANCE : 
-https://api-rinkeby.etherscan.io/api?module=account&action=balance&address=0x02390dBA46A107F0728DAA98f920aec171502B22&tag=latest&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+https://api-rinkeby.etherscan.io/api?module=account&action=balance&address=0x02390dBA46A107F0728DAA98f920aec171502B22&tag=latest&apikey=$key
 
 
 ERC721
-https://api-rinkeby.etherscan.io/api?module=account&action=tokennfttx&address=0x32c7411558177aAE348d9F06C6Ec912F5E2573d8&startblock=0&endblock=999999999&sort=asc&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+https://api-rinkeby.etherscan.io/api?module=account&action=tokennfttx&address=0x32c7411558177aAE348d9F06C6Ec912F5E2573d8&startblock=0&endblock=999999999&sort=asc&apikey=$key
 
 
 
@@ -22,13 +22,13 @@ https://api-rinkeby.etherscan.io/api?module=account&action=tokennfttx&address=0x
 
 
 ERC20
-https://api-rinkeby.etherscan.io/api?module=account&action=tokentx&address=0x02390dBA46A107F0728DAA98f920aec171502B22&startblock=0&endblock=999999999&sort=asc&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+https://api-rinkeby.etherscan.io/api?module=account&action=tokentx&address=0x02390dBA46A107F0728DAA98f920aec171502B22&startblock=0&endblock=999999999&sort=asc&apikey=$key
 
 ERC1155
-https://api-rinkeby.etherscan.io/api?module=account&action=tokennfttx&address=0x02390dBA46A107F0728DAA98f920aec171502B22&startblock=0&endblock=999999999&sort=asc&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+https://api-rinkeby.etherscan.io/api?module=account&action=tokennfttx&address=0x02390dBA46A107F0728DAA98f920aec171502B22&startblock=0&endblock=999999999&sort=asc&apikey=$key
 
 ALL Minted
-https://api-rinkeby.etherscan.io/api?module=account&action=getminedblocks&address=0x02390dBA46A107F0728DAA98f920aec171502B22&blocktype=blocks&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+https://api-rinkeby.etherscan.io/api?module=account&action=getminedblocks&address=0x02390dBA46A107F0728DAA98f920aec171502B22&blocktype=blocks&apikey=$key
 
 EVENTS LOGS
 //https://docs.etherscan.io/api-endpoints/logs#sample-log-api-queries
@@ -41,7 +41,7 @@ https://api-rinkeby.etherscan.io
 &sort=desc
 &address=0x2D71052c0f9861C82807703F2e586De040833E17
 &topic1=0x000000000000000000000000a7cc2e2050a607c813437c1c074f82322cc0c8ae
-&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+&apikey=$key
 
 //ERC1155 getting event logs
 https://api-rinkeby.etherscan.io
@@ -50,7 +50,7 @@ https://api-rinkeby.etherscan.io
 &toBlock=latest
 &sort=desc
 &address=0x2D71052c0f9861C82807703F2e586De040833E17
-&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+&apikey=$key
 
 //ERC1155 getting event logs
 https://api-rinkeby.etherscan.io
@@ -60,7 +60,7 @@ https://api-rinkeby.etherscan.io
 &sort=desc
 &topic3=0x00000000000000000000000002390dba46a107f0728daa98f920aec171502b22
 &address=0x2D71052c0f9861C82807703F2e586De040833E17
-&apikey=CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+&apikey=$key
 
 
 
@@ -75,4 +75,4 @@ CALL INFOS :
 https://api.etherscan.io/apis
 
 API : KEY
-CAS5V4SCSESCT1IDDG3IG5SU31XU81MYE3
+$key
