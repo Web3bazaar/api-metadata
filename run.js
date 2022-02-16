@@ -1,5 +1,30 @@
 var express = require("express");
 var app = express();
+var cors = require('cors')
+
+const ALLOWED_HEADERS=`*`
+const ALLOWED_ORIGINS=`*`
+
+function parseValues(originalValues) {
+    let parsedValues = originalValues;
+    if (originalValues.includes(',')) {
+      parsedValues = originalValues.split(',');
+    }
+    return parsedValues;
+}
+
+let corsOpts = {};
+const origin = parseValues(ALLOWED_ORIGINS);
+const allowedHeaders = parseValues(ALLOWED_HEADERS);
+corsOpts = ({
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  preflightContinue: true,
+  allowedHeaders,
+  origin,
+});
+
+// enable cors
+app.use(cors(corsOpts))
 
 let port = process.env.PORT || 3000;
 app.listen(port, () => 
