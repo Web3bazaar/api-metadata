@@ -2,17 +2,20 @@ const { readdirSync, rename } = require('fs');
 const { resolve } = require('path');
 
 // Get path to image directory
-const imageDirPath = resolve(__dirname, 'sample');
+const imageDirPath = resolve(__dirname, 'src_images');
+const newNamePath = resolve(__dirname, 'images');
 
 var i = 1;
 // Get an array of the files inside the folder
-const files = readdirSync(imageDirPath);
+let files = readdirSync(imageDirPath);
 // Loop through each file that was retrieved
 files.forEach(file => rename(
   imageDirPath + `/${file}`,
-  imageDirPath + `/${i++ + '.jpg' }`,
+  newNamePath + `/${i++ + '.jpg' }`,
   err => console.log(err)
 ));
+
+
 
 
 // files.forEach(file => { 

@@ -23,6 +23,10 @@ corsOpts = ({
   origin,
 });
 
+const NUM_PICS = 43;
+const BASE_IMAGE = process.env.BASE_PATH || "https://raw.githubusercontent.com/web3bazaar/api-metadata/tree/master/static/images"
+
+
 // enable cors
 app.use(cors(corsOpts))
 
@@ -33,19 +37,69 @@ app.listen(port, () =>
 });
 
 const infoContent = {
-    name : 'Item Nº:',
-    description : "Item Desc: ",
-    image : "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/sample/"
+    id : '<id>' , 
+    name : 'Item name : ',
+    description : "Friendly Creature that enjoys long swims in the ocean. ",
+    image : BASE_IMAGE,
+    externalURL : process.env.BASE_API || '',
+    attributes : [
+        {
+            "trait_type": "Base", 
+            "value": "Starfish"
+          }, 
+          {
+            "trait_type": "Eyes", 
+            "value": "Big"
+          }, 
+          {
+            "trait_type": "Mouth", 
+            "value": "Surprised"
+          }, 
+          {
+            "trait_type": "Level", 
+            "value": 5
+          }, 
+          {
+            "trait_type": "Stamina", 
+            "value": 1.4
+          }, 
+          {
+            "trait_type": "Personality", 
+            "value": "Sad"
+          }, 
+          {
+            "display_type": "boost_number", 
+            "trait_type": "Aqua Power", 
+            "value": 40
+          },
+          {
+            "display_type": "date", 
+            "trait_type": "birthday", 
+            "value": 1546360800
+          }
+    ]
+}
+
+const contractInfo = 
+{
+  "name": "Demonstrating collection for tests purposes. by @web3bazaar",
+  "description": "Collection created for demonstration series on @web3bazaar github check full information on github. OpenSea Creatures are adorable aquatic beings primarily for demonstrating what can be done using the OpenSea platform. Adopt one today to try out all the OpenSea buying, selling, and bidding feature set.",
+  "image": "https://raw.githubusercontent.com/web3bazaar/api-metadata/tree/master/static/mario.png",
+  "banner": "https://raw.githubusercontent.com/web3bazaar/api-metadata/tree/master/static/opensea-banner.png",
+  "banner_url": "https://raw.githubusercontent.com/web3bazaar/api-metadata/tree/master/static/opensea-banner.png",
+  "external_link": "https://github.com/web3bazaar/",
+  "seller_fee_basis_points": 15,
+  "fee_recipient": "0xA7Cc2E2050A607c813437C1c074f82322Cc0C8aE" 
 }
 
 app.get("/", (req, res, next) => 
 {
-    res.json( {name : "example 2"} );
+    res.json( contractInfo  );
 });
 
 app.get("/detail", (req, res, next) => 
 {
-    res.json( {name : "example 1"} );
+    res.json( contractInfo );
 });
 
 
@@ -54,18 +108,19 @@ app.get("/detail/:id", (req, res, next) =>
     console.log('input ', req.params.id);
     let id = req.params.id; //parseInt(req.params.id, 16);
     
-    if(id < 1 || id > 90){
+    if(id < 1){
         console.log('There isnt any id valid');
         res.json( {name : "Id from query not vale", ' <!!!!> ' : "Id from query not vale", in : req.params.id} );
     }
     else{
-        infoContent
+        const picID = id % (NUM_PICS);
         res.json(
             { 
                 id : id,
                 name : infoContent.name +  id ,
                 description: infoContent.description +  id,
-                image: infoContent.image +  id + '.jpg',
+                externalURL: infoContent.externalURL +  id,
+                image: infoContent.image +  picID + '.jpg',
              });
     }
    
