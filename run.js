@@ -84,9 +84,9 @@ const contractInfo =
 {
   "name": "Demonstrating collection for tests purposes. by @web3bazaar",
   "description": "Collection created for demonstration series on @web3bazaar github check full information on github. OpenSea Creatures are adorable aquatic beings primarily for demonstrating what can be done using the OpenSea platform. Adopt one today to try out all the OpenSea buying, selling, and bidding feature set.",
-  "image": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static//mario.png",
-  "banner": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/images/opensea-banner.png",
-  "banner_url": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/images//opensea-banner.png",
+  "image": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/mario.png",
+  "banner": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/opensea-banner.png",
+  "banner_url": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static//opensea-banner.png",
   "external_link": "https://github.com/web3bazaar/",
   "seller_fee_basis_points": 15,
   "fee_recipient": "0xA7Cc2E2050A607c813437C1c074f82322Cc0C8aE" 
