@@ -38,7 +38,7 @@ app.listen(port, () =>
 
 const infoContent = {
     id : '<id>' , 
-    name : 'Item name : ',
+    name : 'NFT #',
     description : "Friendly Creature that enjoys long swims in the ocean. ",
     image : BASE_IMAGE,
     externalURL : process.env.BASE_API || '',
@@ -50,22 +50,6 @@ const infoContent = {
           {
             "trait_type": "Eyes", 
             "value": "Big"
-          }, 
-          {
-            "trait_type": "Mouth", 
-            "value": "Surprised"
-          }, 
-          {
-            "trait_type": "Level", 
-            "value": 5
-          }, 
-          {
-            "trait_type": "Stamina", 
-            "value": 1.4
-          }, 
-          {
-            "trait_type": "Personality", 
-            "value": "Sad"
           }, 
           {
             "display_type": "boost_number", 
@@ -80,13 +64,13 @@ const infoContent = {
     ]
 }
 
-const contractInfo = 
+let contractInfo = 
 {
   "name": "Demonstrating collection for tests purposes. by @web3bazaar",
   "description": "Collection created for demonstration series on @web3bazaar github check full information on github. OpenSea Creatures are adorable aquatic beings primarily for demonstrating what can be done using the OpenSea platform. Adopt one today to try out all the OpenSea buying, selling, and bidding feature set.",
   "image": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/mario.png",
   "banner": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/opensea-banner.png",
-  "banner_url": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static//opensea-banner.png",
+  "banner_url": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/opensea-banner.png",
   "external_link": "https://github.com/web3bazaar/",
   "seller_fee_basis_points": 15,
   "fee_recipient": "0xA7Cc2E2050A607c813437C1c074f82322Cc0C8aE" 
@@ -97,13 +81,15 @@ app.get("/", (req, res, next) =>
     res.json( contractInfo  );
 });
 
-app.get("/detail", (req, res, next) => 
+/**
+ * ERC 1155 
+ */
+app.get("/1155/detail", (req, res, next) => 
 {
     res.json( contractInfo );
 });
 
-
-app.get("/detail/:id", (req, res, next) => 
+app.get("/1155/detail/:id", (req, res, next) => 
 {
     console.log('input ', req.params.id);
     let id = req.params.id; //parseInt(req.params.id, 16);
@@ -125,4 +111,36 @@ app.get("/detail/:id", (req, res, next) =>
     }
    
 });
+
+/**
+ * ERC 721 
+ */
+ app.get("/721/detail", (req, res, next) => 
+ {
+     res.json( contractInfo );
+ });
+ 
+ app.get("/721/detail/:id", (req, res, next) => 
+ {
+     console.log('input ', req.params.id);
+     let id = req.params.id; //parseInt(req.params.id, 16);
+     
+     if(id < 1){
+         console.log('There isnt any id valid');
+         res.json( {name : "Id from query not vale", ' <!!!!> ' : "Id from query not vale", in : req.params.id} );
+     }
+     else{
+         const picID = id % (NUM_PICS);
+         res.json(
+             { 
+                 id : id,
+                 name : infoContent.name +  id ,
+                 description: infoContent.description +  id,
+                 externalURL: infoContent.externalURL +  id,
+                 image: infoContent.image +  picID + '.jpg',
+              });
+     }
+    
+ });
+ 
 
