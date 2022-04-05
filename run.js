@@ -64,10 +64,10 @@ const infoContent = {
     ]
 }
 
-let contractInfo = 
+const contractInfo = 
 {
-  "name": "Demonstrating collection for tests purposes. by @web3bazaar",
-  "description": "Collection created for demonstration series on @web3bazaar github check full information on github. OpenSea Creatures are adorable aquatic beings primarily for demonstrating what can be done using the OpenSea platform. Adopt one today to try out all the OpenSea buying, selling, and bidding feature set.",
+  "name": "Web3 Bazaar ERC-1155 Test Collection",
+  "description": "These are series of randomly generated NFTs under a ERC-155 smart contract hosted on the Mumbai Testnet and deployed by the Web3 Bazaar with the purpose of testing the smart contract trades with this asset type.",
   "image": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/mario.png",
   "banner": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/opensea-banner.png",
   "banner_url": "https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/opensea-banner.png",
@@ -87,9 +87,13 @@ app.get("/", (req, res, next) =>
 app.get("/1155/detail", (req, res, next) => 
 {
     let path = 'https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/banner/erc1155.png'
-    contractInfo.banner = path;
-    contractInfo.banner_url = path;
-    res.json( contractInfo );
+    let info = contractInfo;
+    info.banner = path;
+    info.image = path;
+    info.banner_url = path;
+    info.name = "Web3 Bazaar ERC-1155 Test Collection";
+    info.description = "These are series of randomly generated NFTs under a ERC-155 smart contract hosted on the Mumbai Testnet and deployed by the Web3 Bazaar with the purpose of testing the smart contract trades with this asset type.";
+    res.json( info );
 });
 
 app.get("/1155/detail/:id", (req, res, next) => 
@@ -121,9 +125,13 @@ app.get("/1155/detail/:id", (req, res, next) =>
  app.get("/721/detail", (req, res, next) => 
  {
      let erc721Path = 'https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/banner/erc721.png'
-     contractInfo.banner = erc721Path;
-     contractInfo.banner_url = erc721Path;
-     res.json( contractInfo );
+     let info = contractInfo;
+     info.banner = erc721Path;
+     info.image = erc721Path;
+     info.banner_url = erc721Path;
+     info.name = "Web3 Bazaar ERC-721 Test Collection";
+     info.description = " These are series of randomly generated NFTs under a ERC-721 smart contract hosted on the Mumbai Testnet and deployed by the Web3 Bazaar with the purpose of testing the smart contract trades with this asset type."
+     res.json( info );
  });
  
  app.get("/721/detail/:id", (req, res, next) => 
