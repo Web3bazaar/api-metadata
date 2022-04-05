@@ -86,6 +86,9 @@ app.get("/", (req, res, next) =>
  */
 app.get("/1155/detail", (req, res, next) => 
 {
+    let path = 'https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/banner/erc1155.png'
+    contractInfo.banner = path;
+    contractInfo.banner_url = path;
     res.json( contractInfo );
 });
 
@@ -117,6 +120,9 @@ app.get("/1155/detail/:id", (req, res, next) =>
  */
  app.get("/721/detail", (req, res, next) => 
  {
+     let erc721Path = 'https://raw.githubusercontent.com/Web3bazaar/api-metadata/master/static/banner/erc721.png'
+     contractInfo.banner = erc721Path;
+     contractInfo.banner_url = erc721Path;
      res.json( contractInfo );
  });
  
